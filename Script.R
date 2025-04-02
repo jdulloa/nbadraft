@@ -31,3 +31,5 @@ data <- data %>%
     # y el salto estándar (verticalleap). Muestra el rango adicional de explosividad.
     diferenciaSalto = maxverticalleap - verticalleap
   )
+# Ver estadísticas descriptivas
+summary(data)
