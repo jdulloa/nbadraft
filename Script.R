@@ -31,8 +31,28 @@ data <- data %>%
     # y el salto estándar (verticalleap). Muestra el rango adicional de explosividad.
     diferenciaSalto = maxverticalleap - verticalleap
   )
-# Ver estadísticas descriptivas
+# Ver estadísticas básicas
 summary(data)
+# Cálculo de estadísticas descriptivas para cada variable clave
+descriptivas <- data %>%
+  summarise(
+    Media_Explosividad = mean(explosividad, na.rm = TRUE),
+    Mediana_Explosividad = median(explosividad, na.rm = TRUE),
+    Rango_Explosividad = max(explosividad, na.rm = TRUE) - min(explosividad, na.rm = TRUE),
+    SD_Explosividad = sd(explosividad, na.rm = TRUE),
+    
+    Media_Fuerza_Agilidad = mean(fuerzaAgilidad, na.rm = TRUE),
+    Mediana_Fuerza_Agilidad = median(fuerzaAgilidad, na.rm = TRUE),
+    Rango_Fuerza_Agilidad = max(fuerzaAgilidad, na.rm = TRUE) - min(fuerzaAgilidad, na.rm = TRUE),
+    SD_Fuerza_Agilidad = sd(fuerzaAgilidad, na.rm = TRUE),
+    
+    Media_Rendimiento_Salto = mean(rendimientoSalto, na.rm = TRUE),
+    Mediana_Rendimiento_Salto = median(rendimientoSalto, na.rm = TRUE),
+    Rango_Rendimiento_Salto = max(rendimientoSalto, na.rm = TRUE) - min(rendimientoSalto, na.rm = TRUE),
+    SD_Rendimiento_Salto = sd(rendimientoSalto, na.rm = TRUE)
+  )
+# Mostrar las estadísticas descriptivas
+print(descriptivas)
 # Calcular correlaciones entre las variables
 cor_data <- data %>%
   select(explosividad, fuerzaAgilidad, rendimientoSalto, velocidad, diferenciaSalto) %>%
