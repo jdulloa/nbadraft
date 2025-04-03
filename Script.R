@@ -47,3 +47,8 @@ ggplot(data, aes(x = explosividad, y = rendimientoSalto)) +
   geom_smooth(method = "lm", color = "blue") +
   labs(title = "Relación entre explosividad y rendimiento de salto",
        x = "Explosividad", y = "Rendimiento de salto")
+# Diferencia de saltos relacionada con la fuerza en press de banca
+ggplot(data, aes(x = diferenciaSalto, y = bench)) +
+  geom_point(color = "red") +
+  labs(title = "Relación entre diferencia de saltos y fuerza en press de banca",
+       x = "Diferencia de saltos", y = "Repeticiones en press de banca")
