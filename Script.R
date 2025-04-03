@@ -39,3 +39,11 @@ cor_data <- data %>%
   na.omit() %>%
   cor()
 print(cor_data)
+# Generar gráficos usando la librería de ggplot
+library(ggplot2)
+# Relación entre explosividad y rendimiento de salto
+ggplot(data, aes(x = explosividad, y = rendimientoSalto)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "blue") +
+  labs(title = "Relación entre explosividad y rendimiento de salto",
+       x = "Explosividad", y = "Rendimiento de salto")
