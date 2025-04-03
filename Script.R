@@ -52,3 +52,8 @@ ggplot(data, aes(x = diferenciaSalto, y = bench)) +
   geom_point(color = "red") +
   labs(title = "Relación entre diferencia de saltos y fuerza en press de banca",
        x = "Diferencia de saltos", y = "Repeticiones en press de banca")
+# Comparación de velocidad por posición de jugador
+ggplot(data, aes(x = position, y = velocidad)) +
+  geom_boxplot() +
+  labs(title = "Distribución de velocidad según la posición",
+       x = "Posición del jugador", y = "Velocidad")
