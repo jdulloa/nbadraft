@@ -33,3 +33,9 @@ data <- data %>%
   )
 # Ver estadísticas descriptivas
 summary(data)
+# Calcular correlaciones entre las variables
+cor_data <- data %>%
+  select(explosividad, fuerzaAgilidad, rendimientoSalto, velocidad, diferenciaSalto) %>%
+  na.omit() %>%
+  cor()
+print(cor_data)
